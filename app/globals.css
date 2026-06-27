@@ -580,13 +580,18 @@ p {
 
 .cta-box {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   gap: 24px;
   padding: 32px;
   border-radius: 34px;
   background: linear-gradient(135deg, #245648, #2f7f6d 50%, #3b947f 100%);
   color: white;
   box-shadow: 0 22px 60px rgba(32, 87, 74, 0.24);
+}
+
+.cta-main {
+  display: grid;
+  gap: 22px;
 }
 
 .cta-copy h2 {
@@ -602,6 +607,97 @@ p {
 
 .cta-copy strong {
   color: white;
+}
+
+.quick-booking {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.quick-booking-head {
+  display: grid;
+  gap: 6px;
+}
+
+.quick-booking-head strong {
+  font-size: 1.1rem;
+}
+
+.quick-booking-head span,
+.quick-booking-tip {
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.6;
+}
+
+.quick-booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.quick-booking-grid label {
+  display: grid;
+  gap: 8px;
+}
+
+.quick-booking-grid span {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.quick-booking-grid input,
+.quick-booking-grid select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 0 14px;
+  color: white;
+  background: rgba(15, 46, 38, 0.24);
+  outline: none;
+  font: inherit;
+}
+
+.quick-booking-grid input::placeholder {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.quick-booking-grid input:focus,
+.quick-booking-grid select:focus {
+  border-color: rgba(242, 191, 73, 0.78);
+  box-shadow: 0 0 0 3px rgba(242, 191, 73, 0.16);
+}
+
+.quick-booking-grid option {
+  color: var(--ink);
+}
+
+.quick-booking-note {
+  grid-column: 1 / -1;
+}
+
+.quick-booking-preview {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(14, 37, 31, 0.24);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.quick-booking-preview p {
+  white-space: pre-line;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.quick-booking-actions {
+  margin-top: 0;
 }
 
 .cta .button-secondary {
@@ -710,5 +806,13 @@ footer {
 
   .cta-box {
     padding: 24px;
+  }
+
+  .quick-booking {
+    padding: 18px;
+  }
+
+  .quick-booking-grid {
+    grid-template-columns: 1fr;
   }
 }
