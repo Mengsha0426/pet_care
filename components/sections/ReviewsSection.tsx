@@ -25,13 +25,25 @@ export function ReviewsSection() {
         </div>
         <p>这里放的是可直接替换的示例文案，后续你可以换成门店自己的真实评价截图或短句。</p>
       </Reveal>
-      <div className="review-grid">
-        {reviews.map((review) => (
-          <Reveal key={review.author} as="article" className="panel review">
-            <p>{review.quote}</p>
-            <strong>{review.author}</strong>
-          </Reveal>
-        ))}
+      <div className="reviews-layout">
+        <Reveal as="aside" className="panel review-summary">
+          <span className="review-kicker">口碑概览</span>
+          <strong>4.9 / 5.0</strong>
+          <p>多数评价集中在“安抚细致、吹护不赶、沟通明确”。这类信息比单纯堆字更容易建立信任。</p>
+          <div className="review-tags">
+            <span>耐心安抚</span>
+            <span>修型前确认</span>
+            <span>接送省心</span>
+          </div>
+        </Reveal>
+        <div className="review-grid">
+          {reviews.map((review) => (
+            <Reveal key={review.author} as="article" className="panel review">
+              <p>{review.quote}</p>
+              <strong>{review.author}</strong>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,8 @@ const metrics = [
   { value: "90min", label: "标准洗护平均完成时长" },
 ];
 
+const highlights = ["低噪吹护动线", "敏感宠专属方案", "洗护后即时反馈"];
+
 export function HeroSection() {
   return (
     <section className="hero shell">
@@ -16,6 +18,11 @@ export function HeroSection() {
           <p>
             面向城市养宠家庭的精品洗护单页，主打温和清洁、皮毛护理、造型修剪与接送服务。让每一次洗护都更轻松，也更适合敏感型毛孩子。
           </p>
+          <div className="hero-points">
+            {highlights.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
           <div className="hero-actions">
             <a className="button button-primary" href="#booking">
               预约今天的档期
@@ -39,6 +46,14 @@ export function HeroSection() {
           <div className="bubble three"></div>
           <div className="pet-figure">
             <div className="pet-shape"></div>
+          </div>
+          <div className="visual-note visual-note-top">
+            <span>洗前评估</span>
+            <strong>先看皮肤状态，再定护理强度</strong>
+          </div>
+          <div className="visual-note visual-note-bottom">
+            <span>洗后反馈</span>
+            <strong>离店前同步照片与护理建议</strong>
           </div>
           <div className="card card-right">
             <small>今日热门</small>
