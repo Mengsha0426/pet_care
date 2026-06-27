@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
 export function CtaSection() {
+  const [contactName, setContactName] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
   const [petName, setPetName] = useState("");
   const [petType, setPetType] = useState("猫咪");
   const [weight, setWeight] = useState("");
@@ -12,11 +14,15 @@ export function CtaSection() {
   const [notes, setNotes] = useState("");
   const [copyLabel, setCopyLabel] = useState("复制预约信息");
 
+  const safeContactName = contactName.trim() || "未填写";
+  const safeContactPhone = contactPhone.trim() || "未填写";
   const safePetName = petName.trim() || "未填写";
   const safeWeight = weight.trim() || "未填写";
   const safeNotes = notes.trim() || "无";
   const bookingMessage = [
     "你好，我想快速预约宠物洗护。",
+    `联系人：${safeContactName}`,
+    `联系电话：${safeContactPhone}`,
     `宠物昵称：${safePetName}`,
     `宠物类型：${petType}`,
     `体重：${safeWeight}`,
@@ -50,9 +56,29 @@ export function CtaSection() {
           <form className="quick-booking" onSubmit={(event) => event.preventDefault()}>
             <div className="quick-booking-head">
               <strong>快速预约</strong>
-              <span>填好信息后一键复制，联系更快。</span>
+              <span>补充联系人和宠物信息，一键复制后联系更快。</span>
             </div>
             <div className="quick-booking-grid">
+              <label>
+                <span>联系人</span>
+                <input
+                  name="contactName"
+                  placeholder="比如：王女士"
+                  value={contactName}
+                  onChange={(event) => setContactName(event.target.value)}
+                />
+              </label>
+              <label>
+                <span>联系电话</span>
+                <input
+                  name="contactPhone"
+                  type="tel"
+                  inputMode="tel"
+                  placeholder="比如：138 0000 0000"
+                  value={contactPhone}
+                  onChange={(event) => setContactPhone(event.target.value)}
+                />
+              </label>
               <label>
                 <span>宠物昵称</span>
                 <input
