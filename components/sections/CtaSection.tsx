@@ -10,7 +10,7 @@ export function CtaSection() {
   const [petType, setPetType] = useState("猫咪");
   const [weight, setWeight] = useState("");
   const [service, setService] = useState("洗护基础护理");
-  const [timeSlot, setTimeSlot] = useState("今天下午");
+  const [timeSlot, setTimeSlot] = useState("明天 10:00");
   const [notes, setNotes] = useState("");
   const [copyLabel, setCopyLabel] = useState("复制预约信息");
 
@@ -120,6 +120,7 @@ export function CtaSection() {
                 <select name="timeSlot" value={timeSlot} onChange={(event) => setTimeSlot(event.target.value)}>
                   <option value="今天上午">今天上午</option>
                   <option value="今天下午">今天下午</option>
+                  <option value="明天 10:00">明天 10:00</option>
                   <option value="明天上午">明天上午</option>
                   <option value="明天下午">明天下午</option>
                 </select>
